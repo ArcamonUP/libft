@@ -69,19 +69,19 @@ OBJSB = ${SRCB:.c=.o}
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(OBJS) $(OBJSB)
-	ar rcs $(NAME) $(OBJS) $(OBJSB)
+	@ar rcs $(NAME) $(OBJS) $(OBJSB)
 
 clean:
-	rm -rf $(OBJS) $(OBJSB)
+	@rm -rf $(OBJS) $(OBJSB)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re:	fclean all
 
